@@ -1,29 +1,46 @@
-import { Link, Outlet } from 'react-router-dom';
-import styled from 'styled-components';
+import { NavLink, Outlet } from 'react-router-dom';
+import { FaRegUserCircle } from 'react-icons/fa';
+import { RiHome4Line, RiEditBoxLine, RiFileList3Line, RiToolsLine } from 'react-icons/ri';
 
-const Header = styled.header`
-  display: flex;
-  gap: 16px;
-  padding: 16px 24px;
-  border-bottom: 1px solid #eee;
-`;
+import { CURRENT_USER } from '../data/mockData';
+import '../styles/layout.css';
 
-const Main = styled.main`
-  padding: 24px;
-`;
+const NAV_ITEMS = [
+  { to: '/', label: '홈', icon: <RiHome4Line />, end: true },
+  { to: '/reports/new', label: '신고 작성', icon: <RiEditBoxLine /> },
+  { to: '/mypage', label: '내 신고', icon: <RiFileList3Line /> },
+];
 
 function Layout() {
   return (
-    <>
-      <Header>
-        <Link to="/">Home</Link>
-        <Link to="/login">Login</Link>
-        <Link to="/mypage">MyPage</Link>
-      </Header>
-      <Main>
-        <Outlet />
-      </Main>
-    </>
+    <div className="layout">
+      <aside className="sidebar">
+        <NavLink to="/" className="sidebar-logo">
+          <RiToolsLine />
+          <span>시설 고장 신고</span>
+        </NavLink>
+        <nav className="sidebar-nav">
+          {NAV_ITEMS.map(({ to, label, icon, end }) => (
+            <NavLink key={to} to={to} end={end} className="sidebar-link">
+              {icon}
+              {label}
+            </NavLink>
+          ))}
+        </nav>
+      </aside>
+
+      <div className="layout-body">
+        <header className="topbar">
+          <div className="topbar-user">
+            <FaRegUserCircle />
+            {CURRENT_USER.name}
+          </div>
+        </header>
+        <main className="layout-main">
+          <Outlet />
+        </main>
+      </div>
+    </div>
   );
 }
 
