@@ -1,0 +1,35 @@
+.admin-dashboard {
+  max-width: 960px;
+}
+
+.admin-dashboard-title {
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  margin-top: 28px;
+}
+
+.admin-panel {
+  margin-top: 36px;
+  padding: 28px 48px 24px;
+  border: 1px solid #eef2f8;
+  border-radius: 8px;
+  background: #f9fbff;
+}
+
+.admin-panel-title {
+  margin-bottom: 16px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.admin-panel-title a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,186 @@
+/* 관리자 화면 공통 컴포넌트 (클래스는 모두 admin- 접두사로 학생 화면과 구분) */
+
+.admin-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 132px;
+  height: 36px;
+  border: 1px solid #eef2f8;
+  border-radius: 6px;
+  background: var(--color-surface);
+  box-shadow: var(--shadow);
+  font-size: 14px;
+  color: var(--color-primary);
+}
+
+.admin-input {
+  width: 100%;
+  height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.admin-input:focus {
+  border-color: var(--color-primary-strong);
+}
+
+.admin-input::placeholder {
+  color: #9aa6b8;
+}
+
+/* 통계 카드 */
+.admin-stat-card {
+  padding: 22px 16px 24px;
+  border: 1px solid #eef2f8;
+  border-radius: 8px;
+  background: var(--color-surface);
+  box-shadow: 0 2px 6px rgba(40, 59, 89, 0.12);
+  text-align: center;
+}
+
+.admin-stat-label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.admin-stat-count {
+  margin-top: 12px;
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.admin-stat-count span {
+  margin-left: 6px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* 상태 필터 탭 */
+.admin-filter-tabs {
+  display: flex;
+  gap: 12px;
+}
+
+.admin-filter-tab {
+  min-width: 82px;
+  padding: 7px 14px;
+  border: 1px solid #eef2f8;
+  border-radius: 4px;
+  background: var(--color-surface);
+  font-size: 13px;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.admin-filter-tab:hover {
+  border-color: var(--color-border);
+}
+
+.admin-filter-tab.active {
+  border-color: transparent;
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* 처리 상태 뱃지 */
+.admin-status-badge {
+  display: inline-block;
+  min-width: 72px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background: var(--color-primary-soft);
+  color: var(--status-progress-text);
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.admin-status-badge[data-status='처리 완료'] {
+  background: #f1f4f9;
+  color: #a3adbc;
+}
+
+/* 신고 테이블 */
+.admin-table-wrap {
+  margin-top: 20px;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  text-align: center;
+}
+
+.admin-table th {
+  padding: 12px 8px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.admin-table td {
+  padding: 11px 8px;
+  white-space: nowrap;
+}
+
+.admin-table tbody tr {
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.admin-table tbody tr:hover {
+  background: var(--color-bg);
+}
+
+.admin-table td svg {
+  display: block;
+  margin: 0 auto;
+  font-size: 18px;
+  color: var(--color-text-sub);
+}
+
+.admin-table .admin-title-cell {
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 대시보드: 흰 카드 안의 표, 완료된 신고는 흐리게 */
+.admin-table-card {
+  padding: 4px 8px 8px;
+  border: 1px solid #eef2f8;
+  border-radius: 6px;
+  background: var(--color-surface);
+}
+
+.admin-table-card tbody tr[data-status='처리 완료'] td {
+  color: #b3bcc9;
+}
+
+.admin-table-card tbody tr[data-status='처리 완료'] td svg {
+  color: #c4ccd7;
+}
+
+/* 신고 목록: 점선 머리줄의 단순한 표 */
+.admin-table-plain th {
+  border-bottom: 1px dashed var(--color-line);
+}
+
+.admin-table-plain td {
+  padding: 20px 8px;
+}
+
+.admin-table-empty {
+  padding: 48px 16px;
+  font-size: 14px;
+  text-align: center;
+  color: var(--color-text-sub);
+}

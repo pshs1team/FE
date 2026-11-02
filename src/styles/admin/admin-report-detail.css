@@ -1,0 +1,137 @@
+.admin-detail-card {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 44px 48px 40px;
+  border: 1px solid #eef2f8;
+  border-radius: 8px;
+  background: var(--color-surface);
+  box-shadow: var(--shadow);
+}
+
+.admin-detail-header {
+  padding-bottom: 20px;
+  border-bottom: 1px dashed var(--color-line);
+}
+
+.admin-detail-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-detail-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.admin-detail-meta {
+  display: flex;
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--color-text-sub);
+}
+
+.admin-detail-meta span + span {
+  margin-left: 8px;
+  padding-left: 8px;
+  border-left: 1px solid var(--color-line);
+}
+
+.admin-detail-meta strong {
+  margin-left: 4px;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.admin-detail-content {
+  padding: 32px 8px;
+  font-size: 15px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.admin-detail-files {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+  padding: 0 8px;
+  font-size: 13px;
+}
+
+.admin-detail-label {
+  flex-shrink: 0;
+  color: var(--color-text-sub);
+}
+
+.admin-detail-file-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.admin-detail-file {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.admin-detail-file img {
+  width: 160px;
+  height: 120px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.admin-detail-actions {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin-top: 48px;
+}
+
+.admin-status-action {
+  min-width: 120px;
+  height: 40px;
+  border: 1px solid #eef2f8;
+  border-radius: 6px;
+  background: var(--color-surface);
+  font-size: 14px;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.admin-status-action:hover:not(:disabled) {
+  border-color: var(--color-primary-strong);
+}
+
+.admin-status-action.active {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.admin-status-action:disabled {
+  cursor: default;
+}
+
+.admin-status-action:disabled:not(.active) {
+  opacity: 0.6;
+}
+
+.admin-detail-error {
+  margin-top: 16px;
+  font-size: 13px;
+  text-align: center;
+  color: var(--color-danger);
+}
+
+.admin-not-found {
+  text-align: center;
+}
+
+.admin-not-found p {
+  margin: 12px 0 20px;
+  color: var(--color-text-sub);
+}
