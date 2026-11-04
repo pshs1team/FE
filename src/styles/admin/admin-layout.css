@@ -1,0 +1,84 @@
+/* 관리자 화면은 데스크톱 기준 */
+
+/* 대시보드: 사이드바 + 본문 */
+.admin-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-width: 1080px;
+  min-height: 100vh;
+}
+
+.admin-sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 28px 24px 48px;
+  background: var(--color-surface);
+}
+
+.admin-logout {
+  width: 132px;
+  height: 36px;
+  border: 1px solid #eef2f8;
+  border-radius: 6px;
+  background: var(--color-surface);
+  box-shadow: var(--shadow);
+  font-size: 14px;
+  transition: border-color 0.15s;
+}
+
+.admin-logout:hover {
+  border-color: var(--color-primary-strong);
+}
+
+.admin-layout-main {
+  min-width: 0;
+  padding: 36px 48px 48px;
+  background: var(--color-bg);
+}
+
+/* 신고 목록·상세: 상단 바 + 본문 + 하단 바 */
+.admin-page {
+  display: flex;
+  flex-direction: column;
+  min-width: 1080px;
+  min-height: 100vh;
+}
+
+.admin-page-topbar {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  padding: 0 16px;
+  background: var(--color-primary-soft);
+}
+
+.admin-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 4px;
+  background: var(--color-surface);
+  font-size: 22px;
+  color: var(--color-primary);
+}
+
+.admin-page-main {
+  flex: 1;
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 64px 48px;
+}
+
+.admin-page-footer {
+  height: 28px;
+  background: var(--color-primary-soft);
+}
