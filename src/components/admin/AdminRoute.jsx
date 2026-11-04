@@ -6,6 +6,9 @@ import { isAdminLoggedIn } from '../../api/adminAuthApi';
 function AdminRoute() {
   const location = useLocation();
 
+  // 백엔드 연동 전 개발용: dev 모드에선 로그인 체크 건너뜀
+  if (import.meta.env.DEV) return <Outlet />;
+
   if (!isAdminLoggedIn()) {
     return <Navigate to="/admin/login" replace state={{ from: location.pathname + location.search }} />;
   }
